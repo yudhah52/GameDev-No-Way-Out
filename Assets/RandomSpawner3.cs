@@ -36,7 +36,7 @@ public class RandomSpawner3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 15; i++)
+        if (Input.GetKeyDown(KeyCode.RightAlt))
         {
             int lokasi = Random.Range(1, 5);
             switch (lokasi)
@@ -54,10 +54,6 @@ public class RandomSpawner3 : MonoBehaviour
                     Instantiate(cubePrefab, location4, Quaternion.identity);
                     break;
             }
-
-        }
-        if (Input.GetKeyDown(KeyCode.RightAlt))
-        {
             // Vector3 randomSpawnPosition = new Vector3(Random.Range(-20, 17), 4, Random.Range(-18, 38));
             // Instantiate(cubePrefab, randomSpawnPosition, Quaternion.identity);
         }
