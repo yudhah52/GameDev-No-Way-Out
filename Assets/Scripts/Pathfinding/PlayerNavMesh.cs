@@ -5,15 +5,15 @@ using UnityEngine.AI;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    [SerializeField] private Transform movePositionTransform;
-    private NavMeshAgent navMeshAgent;
+    [SerializeField] private Transform targetPositionTransform;
+    private NavMeshAgent brianNavMeshAgent;
     private void Awake()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        brianNavMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        navMeshAgent.destination = movePositionTransform.position;
+        brianNavMeshAgent.destination = targetPositionTransform.position;
     }
 }
