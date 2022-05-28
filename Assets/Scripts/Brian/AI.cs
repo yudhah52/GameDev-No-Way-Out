@@ -38,7 +38,7 @@ public class AI: MonoBehaviour
         m_IsPatrol = true;
         m_CaughtPlayer = false;
         m_playerInRange = false;
-        //m_PlayerNear = false;
+        m_PlayerNear = false;
         m_WaitTime = startWaitTime;                 
         m_TimeToRotate = timeToRotate;
 
@@ -118,8 +118,11 @@ public class AI: MonoBehaviour
         {
             m_PlayerNear = false;           
             playerLastPosition = Vector3.zero;
-            navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);    
-            if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+            navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+            Debug.Log(navMeshAgent.remainingDistance);
+            Debug.Log(navMeshAgent.stoppingDistance);
+            Debug.Log(waypoints[m_CurrentWaypointIndex]);
+            if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance + 3)
             {
                 
                 if (m_WaitTime <= 0)
